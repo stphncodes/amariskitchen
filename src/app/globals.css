@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/*
+ * Theme tokens. The site defaults to the dark brand look; adding the
+ * `light` class to <html> (done by the ThemeToggle component) flips the
+ * surface/ink variables to the light theme. Gold darkens in light mode
+ * so it stays readable on cream backgrounds.
+ */
+:root {
+  --surface: #0a0a0a;
+  --surface-alt: #151310;
+  --ink: #ffffff;
+  --brand-gold: #f5c518;
+}
+
+html.light {
+  --surface: #fffaf2;
+  --surface-alt: #f6ecdc;
+  --ink: #1f1508;
+  --brand-gold: #a97e0a;
+}
+
+@theme {
+  --color-brand-black: #0a0a0a;
+  --color-brand-charcoal: #151310;
+  --color-brand-orange: #f97316;
+  --color-brand-orange-bright: #ff6b00;
+  --color-brand-cream: #fdf6ec;
+
+  --font-display: var(--font-display), "Arial Black", sans-serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-ink: var(--ink);
+  --color-brand-gold: var(--brand-gold);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Sections scroll to just below the sticky header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/*
+ * GSAP-animated elements start hidden to avoid a flash before the entrance
+ * animation runs. JS (Reveal/Hero/WhatsAppFloat) animates them in; the
+ * <noscript> override in layout.tsx and the reduced-motion rule below keep
+ * content visible when animations can't run.
+ */
+.gsap-reveal,
+.hero-fx,
+.wa-float {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-reveal,
+  .hero-fx,
+  .wa-float {
+    opacity: 1;
+  }
+}
