@@ -42,6 +42,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Guard against any decorative element creating sideways scroll on mobile */
+html,
+body {
+  overflow-x: clip;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -60,15 +60,15 @@ export function LogoMark({ className = "h-12 w-12" }: { className?: string }) {
 
 export default function Logo() {
   return (
-    <span className="flex items-center gap-2.5">
-      <span className="text-brand-gold">
-        <LogoMark />
+    <span className="flex min-w-0 items-center gap-2 sm:gap-2.5">
+      <span className="shrink-0 text-brand-gold">
+        <LogoMark className="h-9 w-9 sm:h-12 sm:w-12" />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-display text-xl tracking-[0.08em] text-ink">
+        <span className="font-display text-lg tracking-[0.08em] text-ink sm:text-xl">
           AMARI&apos;S
         </span>
-        <span className="text-[0.6rem] font-semibold uppercase tracking-[0.45em] text-brand-gold">
+        <span className="text-[0.55rem] font-semibold uppercase tracking-[0.35em] text-brand-gold sm:text-[0.6rem] sm:tracking-[0.45em]">
           Kitchen
         </span>
       </span>

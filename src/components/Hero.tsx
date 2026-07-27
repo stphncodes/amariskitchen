@@ -64,7 +64,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative overflow-hidden bg-surface pt-32 pb-20 sm:pt-40 sm:pb-28"
+      className="relative overflow-hidden bg-surface pt-28 pb-16 sm:pt-40 sm:pb-28"
     >
       {/* Warm glow accents */}
       <div

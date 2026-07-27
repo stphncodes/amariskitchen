@@ -27,7 +27,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 sm:h-20 sm:px-6">
         <a href="#top" aria-label="Amari's Kitchen, back to top" onClick={closeMenu}>
           <Logo />
         </a>
@@ -53,11 +53,11 @@ export default function Header() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 text-ink"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/20 text-ink sm:h-11 sm:w-11"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -86,10 +86,13 @@ export default function Header() {
       <div
         id="mobile-menu"
         className={`overflow-hidden border-ink/10 bg-surface/95 backdrop-blur transition-[max-height] duration-300 lg:hidden ${
-          menuOpen ? "max-h-105 border-t" : "max-h-0"
+          menuOpen ? "max-h-[calc(100dvh-4rem)] border-t" : "max-h-0"
         }`}
       >
-        <nav aria-label="Mobile navigation" className="flex flex-col gap-1 px-4 py-4">
+        <nav
+          aria-label="Mobile navigation"
+          className="flex max-h-[calc(100dvh-4rem)] flex-col gap-1 overflow-y-auto px-4 py-4"
+        >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}

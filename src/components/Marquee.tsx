@@ -32,20 +32,21 @@ export default function Marquee() {
   }, []);
 
   return (
-    <div
-      aria-hidden="true"
-      className="relative z-10 -my-4 -rotate-1 overflow-hidden border-y-4 border-brand-gold bg-brand-orange py-3 shadow-xl shadow-black/30"
-    >
-      <div ref={trackRef} className="flex w-max whitespace-nowrap">
-        {[...ITEMS, ...ITEMS].map((item, i) => (
-          <span
-            key={i}
-            className="flex items-center gap-6 pr-6 font-display text-lg tracking-wide text-brand-black uppercase sm:text-xl"
-          >
-            {item}
-            <span className="text-brand-gold">✦</span>
-          </span>
-        ))}
+    // Outer wrapper clips the tilted band so it can't cause horizontal
+    // scrolling on small screens
+    <div aria-hidden="true" className="relative z-10 -my-4 overflow-hidden py-1">
+      <div className="-mx-2 -rotate-1 overflow-hidden border-y-4 border-brand-gold bg-brand-orange py-3 shadow-xl shadow-black/30">
+        <div ref={trackRef} className="flex w-max whitespace-nowrap">
+          {[...ITEMS, ...ITEMS].map((item, i) => (
+            <span
+              key={i}
+              className="flex items-center gap-6 pr-6 font-display text-lg tracking-wide text-brand-black uppercase sm:text-xl"
+            >
+              {item}
+              <span className="text-brand-gold">✦</span>
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
