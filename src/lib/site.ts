@@ -50,6 +50,8 @@ export const LOGO_IMAGE: { src: string | null } = {
 export type ImageSlot = {
   /** A /public path or URL. null (or a failed load) shows the placeholder. */
   src: string | null;
+  /** Tried when src is missing or fails to load (e.g. stock URL backup). */
+  fallbackSrc?: string;
   alt: string;
   emoji: string;
   label: string;
@@ -61,8 +63,9 @@ const unsplash = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=80`;
 
 export const HERO_IMAGE: ImageSlot = {
-  src: unsplash("photo-1665332195309-9d75071138f0"),
-  alt: "A Nigerian party spread: smoky jollof rice with peppers, grilled fish and chicken skewers",
+  src: "/images/jollof-spaghetti.jpg",
+  fallbackSrc: unsplash("photo-1665332195309-9d75071138f0"),
+  alt: "A generous plate of Amari's Kitchen jollof spaghetti topped with peppered chicken",
   emoji: "🍛",
   label: "Fresh From the Kitchen",
   gradient: "from-orange-600 via-amber-500 to-yellow-400",
@@ -77,8 +80,9 @@ export const ABOUT_IMAGE: ImageSlot = {
 };
 
 export const STORY_IMAGE: ImageSlot = {
-  src: unsplash("photo-1765584829997-12ab011bb5b3"),
-  alt: "A Nigerian food vendor preparing fresh food at her stall",
+  src: "/images/party-trays.jpg",
+  fallbackSrc: unsplash("photo-1765584829997-12ab011bb5b3"),
+  alt: "Freshly packed Amari's Kitchen food trays of spaghetti with fried fish and boiled egg",
   emoji: "👩🏾‍🍳",
   label: "Our Kitchen",
   gradient: "from-amber-500 via-orange-500 to-red-500",
@@ -93,15 +97,17 @@ export const GALLERY_IMAGES: ImageSlot[] = [
     gradient: "from-orange-500 to-red-500",
   },
   {
-    src: unsplash("photo-1585032226651-759b368d7246"),
-    alt: "Stir-fried noodles with peppered chicken and vegetables",
+    src: "/images/noodle-packs.jpg",
+    fallbackSrc: unsplash("photo-1585032226651-759b368d7246"),
+    alt: "Takeaway packs of peppered noodles with boiled eggs and beef",
     emoji: "🍜",
     label: "Peppered Noodles",
     gradient: "from-amber-400 to-orange-600",
   },
   {
-    src: unsplash("photo-1578985545062-69928b1d9587"),
-    alt: "A rich celebration cake finished with elegant icing",
+    src: "/images/celebration-cake.jpg",
+    fallbackSrc: unsplash("photo-1578985545062-69928b1d9587"),
+    alt: "An elegant celebration cake decorated with pink roses, gold pearls and leaf details",
     emoji: "🎂",
     label: "Celebration Cakes",
     gradient: "from-pink-500 to-rose-600",
@@ -114,8 +120,9 @@ export const GALLERY_IMAGES: ImageSlot[] = [
     gradient: "from-yellow-500 to-amber-600",
   },
   {
-    src: unsplash("photo-1765584830134-12d879ad13bd"),
-    alt: "Spicy suya with fresh peppers hot off the street grill",
+    src: "/images/small-chops.jpg",
+    fallbackSrc: unsplash("photo-1765584830134-12d879ad13bd"),
+    alt: "A box of small chops: puff puff, samosas, spring rolls and peppered beef",
     emoji: "🍢",
     label: "Suya & Small Chops",
     gradient: "from-orange-400 to-amber-500",
@@ -135,8 +142,9 @@ export const GALLERY_IMAGES: ImageSlot[] = [
     gradient: "from-amber-500 to-orange-500",
   },
   {
-    src: unsplash("photo-1549465220-1a8b9238cd48"),
-    alt: "A wrapped surprise package with cake, drinks and treats",
+    src: "/images/surprise-box.jpg",
+    fallbackSrc: unsplash("photo-1549465220-1a8b9238cd48"),
+    alt: "An Amari's Kitchen surprise box with birthday cake, cupcakes, small chops and a juice drink",
     emoji: "🎁",
     label: "Surprise Packages",
     gradient: "from-fuchsia-500 to-orange-500",

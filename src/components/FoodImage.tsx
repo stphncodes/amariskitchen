@@ -4,9 +4,9 @@ import { useState } from "react";
 import type { ImageSlot } from "@/lib/site";
 
 /**
- * Renders the slot's photo (from src/lib/site.ts). If the slot has no src,
- * or the image fails to load, a branded gradient placeholder with emoji +
- * label renders instead, so a dead URL never leaves a broken image.
+ * Renders the slot's photo (from src/lib/site.ts). Tries `src` first, then
+ * `fallbackSrc` if that fails to load, then the branded gradient placeholder,
+ * so a missing local file or dead URL never leaves a broken image.
  */
 export default function FoodImage({
   slot,
@@ -17,17 +17,22 @@ export default function FoodImage({
   className?: string;
   showLabel?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const sources = [slot.src, slot.fallbackSrc].filter(
+    (s): s is string => Boolean(s),
+  );
+  const current = sources[attempt];
 
-  if (slot.src && !failed) {
+  if (current) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={slot.src}
+        key={current}
+        src={current}
         alt={slot.alt}
         className={`h-full w-full object-cover ${className}`}
         loading="lazy"
-        onError={() => setFailed(true)}
+        onError={() => setAttempt((a) => a + 1)}
       />
     );
   }
