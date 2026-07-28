@@ -56,8 +56,8 @@ export default function Services() {
               className="mx-auto mt-5 h-1 w-20 rounded-full bg-brand-orange"
             />
             <p className="mx-auto mt-6 max-w-2xl text-ink/70">
-              From a single plate of noodles to a full wedding spread,
-              here&apos;s everything Amari&apos;s Kitchen can do for you.
+              Fresh Nigerian meals, celebration cakes, pastries, and natural
+              drinks prepared with care and delivered across Maiduguri.
             </p>
           </div>
         </Reveal>

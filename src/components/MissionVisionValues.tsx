@@ -4,27 +4,32 @@ const CORE_VALUES = [
   {
     icon: "⭐",
     title: "Quality",
-    text: "Fresh ingredients and careful preparation in every single order.",
+    text: "We use quality ingredients and maintain high standards in every meal.",
   },
   {
     icon: "🧼",
     title: "Hygiene",
-    text: "A spotless kitchen and safe food handling, always.",
+    text: "Food safety and cleanliness are non-negotiable.",
   },
   {
     icon: "😊",
     title: "Customer Satisfaction",
-    text: "We are not done until you are smiling.",
+    text: "We go the extra mile to exceed expectations.",
   },
   {
-    icon: "💰",
-    title: "Affordability",
-    text: "Honest prices that respect your pocket.",
+    icon: "🎨",
+    title: "Creativity",
+    text: "We bring fresh ideas to our menus and presentation.",
   },
   {
-    icon: "⏰",
-    title: "Timeliness",
-    text: "Your order arrives when we promised it would.",
+    icon: "🤝",
+    title: "Integrity",
+    text: "We are honest, dependable, and keep our commitments.",
+  },
+  {
+    icon: "🏆",
+    title: "Excellence",
+    text: "We pursue outstanding results in every event we cater.",
   },
 ];
 
@@ -81,7 +86,7 @@ export default function MissionVisionValues() {
           </Reveal>
         </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CORE_VALUES.map((value, i) => (
             <Reveal key={value.title} delay={i * 80}>
               <article className="h-full rounded-2xl border border-ink/10 bg-surface/60 p-5 text-center transition-colors hover:border-brand-orange/50">
