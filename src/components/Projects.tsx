@@ -82,7 +82,7 @@ export default function Projects() {
 
         {/* Achievements & certifications */}
         <Reveal delay={150}>
-          <div className="mt-14 rounded-3xl border border-brand-gold/25 bg-surface/60 p-8">
+          <div className="mt-14 rounded-3xl border border-brand-gold/25 bg-surface/60 p-6 sm:p-8">
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-brand-orange">
               Achievements
             </p>

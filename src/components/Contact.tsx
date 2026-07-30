@@ -45,14 +45,14 @@ export default function Contact() {
 
         {/* WhatsApp quick actions */}
         <Reveal delay={80}>
-          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
             {WHATSAPP_ACTIONS.map((action) => (
               <a
                 key={action.label}
                 href={action.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 rounded-2xl border border-brand-gold/30 bg-surface/60 px-4 py-5 text-center transition-all hover:-translate-y-1 hover:border-brand-orange/60 hover:shadow-lg hover:shadow-brand-orange/10"
+                className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-brand-gold/30 bg-surface/60 px-2 py-4 text-center transition-all hover:-translate-y-1 hover:border-brand-orange/60 hover:shadow-lg hover:shadow-brand-orange/10 sm:px-4 sm:py-5"
               >
                 <span aria-hidden="true" className="text-3xl">
                   {action.icon}
@@ -68,7 +68,7 @@ export default function Contact() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           {/* Contact details */}
           <Reveal variant="left" delay={100}>
-            <div className="h-full rounded-3xl border border-ink/10 bg-surface/60 p-8">
+            <div className="h-full rounded-3xl border border-ink/10 bg-surface/60 p-5 sm:p-8">
               <ul className="space-y-6">
                 <li className="flex gap-4">
                   <span aria-hidden="true" className="mt-0.5 text-2xl">📍</span>
@@ -104,7 +104,7 @@ export default function Contact() {
                       Email
                     </p>
                     <p className="mt-1">
-                      <a href={SITE.emailHref} className="text-ink/75 transition-colors hover:text-brand-orange">
+                      <a href={SITE.emailHref} className="break-all text-ink/75 transition-colors hover:text-brand-orange">
                         {SITE.email}
                       </a>
                     </p>
@@ -125,7 +125,7 @@ export default function Contact() {
                     <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
                       Follow Us
                     </p>
-                    <div className="mt-2 flex gap-3">
+                    <div className="mt-2 flex flex-wrap gap-2.5 sm:gap-3">
                       <a
                         href={SITE.instagram}
                         target="_blank"
@@ -168,7 +168,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open Amari's Kitchen location in Google Maps"
-              className="group flex h-full min-h-[320px] flex-col items-center justify-center gap-4 rounded-3xl border border-brand-gold/25 bg-brand-orange/10 p-8 text-center transition-colors hover:border-brand-gold/60"
+              className="group flex h-full min-h-60 flex-col items-center justify-center gap-4 rounded-3xl border border-brand-gold/25 bg-brand-orange/10 p-6 text-center transition-colors hover:border-brand-gold/60 sm:min-h-80 sm:p-8"
             >
               <span
                 aria-hidden="true"

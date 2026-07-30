@@ -1,6 +1,7 @@
-import FoodImage from "@/components/FoodImage";
+import ChatIntro from "@/components/ChatIntro";
 import Reveal from "@/components/Reveal";
-import { REVIEW_IMAGES, SITE } from "@/lib/site";
+import ReviewWall from "@/components/ReviewWall";
+import { SITE } from "@/lib/site";
 
 export default function Testimonials() {
   return (
@@ -18,22 +19,11 @@ export default function Testimonials() {
               aria-hidden="true"
               className="mx-auto mt-5 h-1 w-20 rounded-full bg-brand-orange"
             />
-            <p className="mx-auto mt-6 max-w-2xl text-ink/70">
-              Real messages from real customers — straight from our WhatsApp
-              and social media.
-            </p>
+            <ChatIntro />
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5">
-          {REVIEW_IMAGES.map((image, i) => (
-            <Reveal key={i} variant="zoom" delay={(i % 3) * 80}>
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-ink/10 shadow-lg transition-transform duration-300 hover:scale-[1.02]">
-                <FoodImage slot={image} />
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <ReviewWall />
 
         <Reveal delay={150}>
           <div className="mt-12 text-center">

@@ -103,22 +103,25 @@ export const STORY_IMAGE: ImageSlot = {
   gradient: "from-amber-500 via-orange-500 to-red-500",
 };
 
+/** How many /public/images/reviews/review-N.jpeg screenshots exist. */
+const REVIEW_COUNT = 32;
+
 /**
- * Customer review screenshots. Save screenshots (WhatsApp chats, Instagram
- * comments, etc.) into /public/images/reviews as review-1.jpg, review-2.jpg, …
- * and they appear automatically; until then the branded placeholder shows.
- * Add more entries here to show more screenshots.
+ * Customer review screenshots, shown as the scrolling wall in the Reviews
+ * section. Save new screenshots (WhatsApp chats, Instagram comments, etc.)
+ * into /public/images/reviews as review-33.jpeg, review-34.jpeg, … and bump
+ * REVIEW_COUNT. A missing file is silently skipped, never a broken image.
  */
-export const REVIEW_IMAGES: ImageSlot[] = [1, 2, 3, 4, 5, 6].map((n) => ({
-  src: `/images/reviews/review-${n}.jpg`,
-  alt: `Screenshot of a customer review of Amari's Kitchen (${n})`,
-  emoji: "💬",
-  label: "Customer Review",
-  gradient:
-    n % 2 === 0
-      ? "from-amber-500 via-orange-500 to-red-500"
-      : "from-orange-600 via-amber-500 to-yellow-400",
-}));
+export const REVIEW_IMAGES: ImageSlot[] = Array.from(
+  { length: REVIEW_COUNT },
+  (_, i) => ({
+    src: `/images/reviews/review-${i + 1}.jpeg`,
+    alt: `Screenshot of a customer review of Amari's Kitchen (${i + 1})`,
+    emoji: "💬",
+    label: "Customer Review",
+    gradient: "from-amber-500 via-orange-500 to-red-500",
+  }),
+);
 
 export const GALLERY_IMAGES: ImageSlot[] = [
   {
