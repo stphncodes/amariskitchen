@@ -63,9 +63,9 @@ export default function MissionVisionValues() {
                 Our Mission
               </h3>
               <p className="mt-3 leading-relaxed text-ink/75">
-                To serve the Maiduguri community honest, delicious Nigerian
-                food and excellent service, making quality meals, cakes, and
-                catering accessible to every home, office, and celebration.
+                To provide exceptional catering, baking, and event services
+                for individuals and organizations by delivering quality meals,
+                creative presentation, and excellent customer care.
               </p>
             </article>
           </Reveal>
@@ -78,9 +78,9 @@ export default function MissionVisionValues() {
                 Our Vision
               </h3>
               <p className="mt-3 leading-relaxed text-ink/75">
-                To become the leading food and catering brand in Borno State
-                and beyond, the first name that comes to mind whenever great
-                taste and quality service are needed.
+                To become the leading food, catering, and hospitality brand in
+                Borno State, the northern region, and beyond — known for
+                excellence, innovation, and unforgettable culinary experiences.
               </p>
             </article>
           </Reveal>

@@ -4,7 +4,7 @@ import { GALLERY_IMAGES, SITE } from "@/lib/site";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-surface py-20 sm:py-28">
+    <section id="gallery" className="bg-surface-alt py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <div className="text-center">

@@ -3,9 +3,14 @@ import { SITE } from "@/lib/site";
 
 const SERVICES = [
   {
-    icon: "🎂",
-    title: "Cakes",
-    text: "Birthday, wedding, and celebration cakes baked from scratch and decorated to order.",
+    icon: "🍔",
+    title: "Fast Food",
+    text: "Shawarma, noodles, peppered chicken, and quick bites, hot and ready fast.",
+  },
+  {
+    icon: "🍲",
+    title: "Food",
+    text: "Jollof rice, fried rice, rich Nigerian soups, and swallow — hearty meals cooked fresh daily.",
   },
   {
     icon: "🥐",
@@ -13,14 +18,9 @@ const SERVICES = [
     text: "Meat pies, sausage rolls, doughnuts, and chin chin, fresh from the oven daily.",
   },
   {
-    icon: "🍔",
-    title: "Fast Food",
-    text: "Jollof rice, fried rice, noodles, shawarma, and peppered chicken, hot and ready fast.",
-  },
-  {
-    icon: "🍽️",
-    title: "Catering",
-    text: "Full-service catering for weddings, corporate events, and family gatherings of any size.",
+    icon: "🎂",
+    title: "Cakes",
+    text: "Birthday, wedding, and celebration cakes baked from scratch and decorated to order.",
   },
   {
     icon: "🧃",
@@ -31,6 +31,11 @@ const SERVICES = [
     icon: "🎁",
     title: "Surprise Packages",
     text: "Curated food-and-treat boxes for birthdays, anniversaries, and 'just because' moments.",
+  },
+  {
+    icon: "🍽️",
+    title: "Catering & Event Services",
+    text: "Full-service catering for weddings, corporate events, and family gatherings of any size.",
   },
   {
     icon: "🛵",

@@ -11,6 +11,9 @@
  * LOGO_IMAGE.src to "/logo.png".
  */
 
+const wa = (text: string) =>
+  `https://wa.me/2349025956773?text=${encodeURIComponent(text)}`;
+
 export const SITE = {
   name: "Amari's Kitchen",
   tagline: "Great Taste - Quality Service",
@@ -23,8 +26,10 @@ export const SITE = {
   email: "amariskitchen83@gmail.com",
   emailHref: "mailto:amariskitchen83@gmail.com",
   whatsapp: "https://wa.me/2349025956773",
-  whatsappOrderMessage:
-    "https://wa.me/2349025956773?text=Hello%20Amari%27s%20Kitchen!%20I%27d%20like%20to%20place%20an%20order.",
+  whatsappOrderMessage: wa("Hello Amari's Kitchen! I'd like to place an order."),
+  whatsappMenuMessage: wa("Hello Amari's Kitchen! I'd like to view your menu."),
+  whatsappQuestionMessage: wa("Hello Amari's Kitchen! I have a question."),
+  whatsappReviewMessage: wa("Hello Amari's Kitchen! I'd like to send a review."),
   instagram: "https://instagram.com/amariskitchen83",
   tiktok: "https://tiktok.com/@amariskitchen83",
   socialHandle: "@amariskitchen83",
@@ -37,14 +42,24 @@ export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Our Story", href: "#story" },
   { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
   { label: "Why Us", href: "#why-us" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
-/** Set src to "/logo.png" after saving the original logo file in /public. */
+/** Quick actions shown in Contact — each opens WhatsApp with a pre-filled message. */
+export const WHATSAPP_ACTIONS = [
+  { icon: "📖", label: "View Menu", href: SITE.whatsappMenuMessage },
+  { icon: "🛒", label: "Place Order", href: SITE.whatsappOrderMessage },
+  { icon: "💬", label: "Ask a Question", href: SITE.whatsappQuestionMessage },
+  { icon: "⭐", label: "Send a Review", href: SITE.whatsappReviewMessage },
+] as const;
+
+/** Original brand artwork, shown in the header and footer. Set to null to fall back to the SVG recreation. */
 export const LOGO_IMAGE: { src: string | null } = {
-  src: null,
+  src: "/images/logo.jpeg",
 };
 
 export type ImageSlot = {
@@ -87,6 +102,23 @@ export const STORY_IMAGE: ImageSlot = {
   label: "Our Kitchen",
   gradient: "from-amber-500 via-orange-500 to-red-500",
 };
+
+/**
+ * Customer review screenshots. Save screenshots (WhatsApp chats, Instagram
+ * comments, etc.) into /public/images/reviews as review-1.jpg, review-2.jpg, …
+ * and they appear automatically; until then the branded placeholder shows.
+ * Add more entries here to show more screenshots.
+ */
+export const REVIEW_IMAGES: ImageSlot[] = [1, 2, 3, 4, 5, 6].map((n) => ({
+  src: `/images/reviews/review-${n}.jpg`,
+  alt: `Screenshot of a customer review of Amari's Kitchen (${n})`,
+  emoji: "💬",
+  label: "Customer Review",
+  gradient:
+    n % 2 === 0
+      ? "from-amber-500 via-orange-500 to-red-500"
+      : "from-orange-600 via-amber-500 to-yellow-400",
+}));
 
 export const GALLERY_IMAGES: ImageSlot[] = [
   {

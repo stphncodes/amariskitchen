@@ -10,7 +10,11 @@ export function LogoMark({ className = "h-12 w-12" }: { className?: string }) {
   if (LOGO_IMAGE.src) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={LOGO_IMAGE.src} alt="" className={`${className} object-contain`} />
+      <img
+        src={LOGO_IMAGE.src}
+        alt=""
+        className={`${className} rounded-full bg-white object-cover ring-2 ring-brand-gold/60`}
+      />
     );
   }
   return (

@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import { SITE } from "@/lib/site";
+import { SITE, WHATSAPP_ACTIONS } from "@/lib/site";
 
 function InstagramIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
@@ -35,6 +35,33 @@ export default function Contact() {
               aria-hidden="true"
               className="mx-auto mt-5 h-1 w-20 rounded-full bg-brand-orange"
             />
+            <p className="mx-auto mt-6 max-w-2xl text-ink/70">
+              Whether it&apos;s a meal for yourself, a loved one, a spouse, a
+              friend, or a colleague — or a birthday celebration to remember —
+              we&apos;re one message away.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* WhatsApp quick actions */}
+        <Reveal delay={80}>
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+            {WHATSAPP_ACTIONS.map((action) => (
+              <a
+                key={action.label}
+                href={action.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 rounded-2xl border border-brand-gold/30 bg-surface/60 px-4 py-5 text-center transition-all hover:-translate-y-1 hover:border-brand-orange/60 hover:shadow-lg hover:shadow-brand-orange/10"
+              >
+                <span aria-hidden="true" className="text-3xl">
+                  {action.icon}
+                </span>
+                <span className="text-sm font-bold text-ink/85">
+                  {action.label}
+                </span>
+              </a>
+            ))}
           </div>
         </Reveal>
 

@@ -30,7 +30,7 @@ const REASONS = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="relative overflow-hidden bg-surface-alt py-20 sm:py-28">
+    <section id="why-us" className="relative overflow-hidden bg-surface py-20 sm:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 right-0 h-72 w-72 rounded-full bg-brand-gold/5 blur-3xl"
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {REASONS.map((reason, i) => (
             <Reveal key={reason.title} delay={i * 80}>
-              <article className="h-full rounded-2xl border border-ink/10 bg-surface/50 p-6 text-center transition-colors hover:border-brand-gold/50">
+              <article className="h-full rounded-2xl border border-ink/10 bg-surface-alt/50 p-6 text-center transition-colors hover:border-brand-gold/50">
                 <span
                   aria-hidden="true"
                   className="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold/40 bg-brand-gold/10 text-2xl"
